@@ -1,0 +1,59 @@
+## Task 1 for Creating tree directory
+
+##answer is 
+mkdir -p a/{b/{d/{i/m/z,j/l/z},e/h/l/z},c/{f/h/l/z,g/k/l/z}}
+tree a
+-----------------------------------------------------------------------------------------------
+## Task 2 creating a new user and giving only date permission to it
+
+## answer is
+
+sudo -i
+ls -l /usr/bin/date
+date
+exit
+whoami
+date
+sudo su
+useradd -s /usr/bin/date vish
+su - vish
+setfacl -m u:vish:rwx /usr/bin/date
+su - vish
+chmod -x /usr/bin/date
+----------------------------------------------------------------------
+##Task 3 
+## User data copy
+## answer 
+systemctl start ssh
+useradd -m A
+useradd -m B
+passwd A
+passwd B
+su - A
+mkdir folder1
+cd folder1
+touch a.txt
+exit
+su - B
+mkdir folder2
+cd folder2
+touch b.txt
+exit
+su - A
+scp -r folder1 B@127.0.0.1:/home/B
+exit
+su - B
+scp -r folder1 A@127.0.0.1:/home/A
+------------------------------------------------------------------------
+##Task 4 
+##running cal command for 10sec and storing in text file
+vim cal.sh
+#!/bin/bash
+endtime=$(date -ud "10 second" +%s)
+while [[ $(date -u +%s) -le $endtime ]]
+do
+    cal >> /tmp/d.txt
+    
+done
+
+bash cal.sh
