@@ -35,10 +35,6 @@ vim Dockerfile
  
 
 docker ps -a |awk -v FIELDWIDTHS="20 20 20 20 20 20 20" '{ print  $4, $7 }' >text.txt
-##task 3
-
-
-
 
 ##task 4
 RAM & CPU consumption of 100 containers 
