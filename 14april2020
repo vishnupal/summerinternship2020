@@ -20,6 +20,20 @@ while count<=100:
 ##TASK 2 
 names and created date of all containters in text file 
 
+##task 3
+docker pull centos:7
+docker run -it --name=vish centos:7
+yum install firefox -y
+mkdir DockerFile
+cd DockerFile
+vim Dockerfile
+ -FROM centos:7
+ -RUN yum install firefox -y
+ -CMD ["/usr/bin/firefox"]
+ docker build -t firefox.
+ docker run -it --env="DISPLAY" --net=host firefox
+ 
+
 docker ps -a |awk -v FIELDWIDTHS="20 20 20 20 20 20 20" '{ print  $4, $7 }' >text.txt
 ##task 3
 
