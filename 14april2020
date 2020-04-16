@@ -1,0 +1,32 @@
+all the task is run on my own linux OS
+
+##task 1 python to launch 100 containers that keeps running even after reboot
+## all 
+systemctl enable docker ##  
+
+import os
+count =1
+while count<=100:
+	if num<=25:
+		os.system("docker run -itd --restart unless-stopped --name adhocnw%d alpine"%(count)
+	elif num<=50:
+		os.system("docker run -itd --restart unless-stopped --name adhocnw%d fedora"%(count))
+	elif num<=75:
+		os.system("docker run -itd --restart unless-stopped --name adhocnw%d centos"%(count))
+	elif num<=100:
+		os.system("docker run -itd --restart unless-stopped --name adhocnw%d java"%(count))
+    
+    
+##TASK 2 
+names and created date of all containters in text file 
+
+docker ps -a |awk -v FIELDWIDTHS="20 20 20 20 20 20 20" '{ print  $4, $7 }' >text.txt
+##task 3
+
+
+
+
+##task 4
+RAM & CPU consumption of 100 containers 
+
+docker stats --all --no-stream |awk -v FIELDWIDTHS="20 20 20 20 20 20 20" '{ print  $2, $3,$4,$5 }'>ram.txt
