@@ -19,6 +19,9 @@ while count<=100:
     
 ##TASK 2 
 names and created date of all containters in text file 
+docker ps -a |awk -v FIELDWIDTHS="20 20 20 20 20 20 20" '{ print  $4, $7 }' >text.txt
+
+
 
 ##task 3
 docker pull centos:7
@@ -34,7 +37,6 @@ vim Dockerfile
  docker run -it --env="DISPLAY" --net=host firefox
  
 
-docker ps -a |awk -v FIELDWIDTHS="20 20 20 20 20 20 20" '{ print  $4, $7 }' >text.txt
 
 ##task 4
 RAM & CPU consumption of 100 containers 
