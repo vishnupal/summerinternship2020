@@ -25,7 +25,7 @@ docker ps -a |awk -v FIELDWIDTHS="20 20 20 20 20 20 20" '{ print  $4, $7 }' >tex
 
 ##task 3
 docker pull centos:7
-docker run -it --name=vish centos:7
+docker run -it --name=vishnu centos:7
 yum install firefox -y
 mkdir DockerFile
 cd DockerFile
