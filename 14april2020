@@ -15,6 +15,7 @@ while count<=100:
 		os.system("docker run -itd --restart unless-stopped --name adhocnw%d centos"%(count))
 	elif count<=100:
 		os.system("docker run -itd --restart unless-stopped --name adhocnw%d java"%(count))
+	count+=1
     
     
 ##TASK 2 
