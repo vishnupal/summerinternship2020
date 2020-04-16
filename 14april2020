@@ -8,7 +8,7 @@ import os
 count =1
 while count<=100:
 	if num<=25:
-		os.system("docker run -itd --restart unless-stopped --name adhocnw%d alpine"%(count)
+		os.system("docker run -itd --restart unless-stopped --name adhocnw%d alpine"%(count))
 	elif num<=50:
 		os.system("docker run -itd --restart unless-stopped --name adhocnw%d fedora"%(count))
 	elif num<=75:
