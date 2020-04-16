@@ -7,13 +7,13 @@ systemctl enable docker ##
 import os
 count =1
 while count<=100:
-	if num<=25:
+	if count<=25:
 		os.system("docker run -itd --restart unless-stopped --name adhocnw%d alpine"%(count))
-	elif num<=50:
+	elif count<=50:
 		os.system("docker run -itd --restart unless-stopped --name adhocnw%d fedora"%(count))
-	elif num<=75:
+	elif count<=75:
 		os.system("docker run -itd --restart unless-stopped --name adhocnw%d centos"%(count))
-	elif num<=100:
+	elif count<=100:
 		os.system("docker run -itd --restart unless-stopped --name adhocnw%d java"%(count))
     
     
